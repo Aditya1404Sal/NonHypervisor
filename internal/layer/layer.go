@@ -19,7 +19,7 @@ func HashLayer(layer interface{}) (string, error) {
 	return hex.EncodeToString(hash.Sum(nil)), nil
 }
 
-// RunCommand runs a shell command and returns any errors encountered
+// RunCommand runs a shell command and returns any errors that are encountered
 func RunCommand(command string) error {
 	cmd := exec.Command("sh", "-c", command)
 	cmd.Stdout = os.Stdout

@@ -7,10 +7,11 @@ import (
 	"fmt"
 )
 
-// BuildImage builds an image based on the configuration
+// BuildImage is supposed to build an image based on the configuration
 func BuildImage(cfg *config.Config) error {
 	fmt.Printf("Building image from base: %s\n", cfg.BaseImage)
-
+	// BaseImage scaffolding is still incomplete.
+	// OCI Image compliance is still incomplete.
 	for _, l := range cfg.Layers {
 		layerHash, err := layer.HashLayer(l)
 		if err != nil {
