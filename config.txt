@@ -1,0 +1,14 @@
+# Use the Alpine Linux image
+FROM docker.io/library/alpine:latest
+
+# Set environment variables
+ENV MY_ENV_VAR=my_value
+
+# Run a command to update the package list
+RUN apk update
+
+# Expose port 8080
+EXPOSE 8080
+
+# Run a command to start a simple HTTP server
+CMD ["sh", "-c", "apk add --no-cache busybox-extras && httpd -f -p 8080"]
